@@ -1,9 +1,11 @@
 const express = require("express");
+const morgan = require("morgan");
 const app = express();
 const db = require('./models');
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+app.use(morgan("tiny"));
 
 app.get("/artist", function (req, response) {
   // add code to get all artists
