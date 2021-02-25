@@ -5,14 +5,13 @@ module.exports = {
     await queryInterface.addConstraint('albums', {
       fields: ['artist_id'],
       type: 'foreign key',
-      name: 'custom_fkey_artist_id',
-      references: { //Required field
+      references: { 
         table: 'artists',
         field: 'id'
       },
-      onDelete: 'cascade',
-      onUpdate: 'cascade'
-    })
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE'
+    });
   },
 
   down: async (queryInterface, Sequelize) => {
